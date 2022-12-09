@@ -1,0 +1,221 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://player/player_object.tscn" type="PackedScene" id=1]
+[ext_resource path="res://platforms/static/square.tscn" type="PackedScene" id=2]
+[ext_resource path="res://platforms/moving/horizontal_platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://platforms/moving/vertical_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://platforms/static/ai_pathfinding_square.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 10 )
+size = Vector3( 3, 0.2, 3 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.5, 0.1, 1.5 )
+
+[sub_resource type="Curve3D" id=7]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.203188, 16.5629, 0.583328, 0, 0, 0, 0, 0, 0, 0.203188, 0.562883, 0.583328 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="CubeMesh" id=8]
+size = Vector3( 100, 0.5, 100 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.494118, 0.494118, 0.494118, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 50, 0.25, 50 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.494118, 0.494118, 0.494118, 1 )
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
+size = Vector3( 0.5, 50, 100 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.25, 25, 50 )
+
+[node name="level_1" type="Node"]
+
+[node name="platforms" type="Node" parent="."]
+
+[node name="static" type="Node" parent="platforms"]
+
+[node name="Spatial" type="Spatial" parent="platforms/static"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97202, 5.53814 )
+
+[node name="KinematicBody" type="KinematicBody" parent="platforms/static/Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="platforms/static/Spatial/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -11 )
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="platforms/static/Spatial/KinematicBody"]
+shape = SubResource( 2 )
+
+[node name="Spatial2" type="Spatial" parent="platforms/static"]
+transform = Transform( -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0, 0, 1, -32, 7, -22 )
+
+[node name="KinematicBody" type="KinematicBody" parent="platforms/static/Spatial2"]
+
+[node name="MeshInstance" type="MeshInstance" parent="platforms/static/Spatial2/KinematicBody"]
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="platforms/static/Spatial2/KinematicBody"]
+shape = SubResource( 2 )
+
+[node name="Spatial3" type="Spatial" parent="platforms/static"]
+transform = Transform( -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0, 0, 1, -24, 7, -18 )
+
+[node name="KinematicBody" type="KinematicBody" parent="platforms/static/Spatial3"]
+
+[node name="MeshInstance" type="MeshInstance" parent="platforms/static/Spatial3/KinematicBody"]
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="platforms/static/Spatial3/KinematicBody"]
+shape = SubResource( 2 )
+
+[node name="Spatial4" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.866025, 1, 0, -0.5, 1.73205, -19, 7, -10 )
+
+[node name="Spatial5" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( -1, -1.27117e-07, 2.61532e-07, -4.47035e-08, 0.866025, 1, -1.76805e-07, 0.5, -1.73205, -44, 1.56218, -13.8923 )
+
+[node name="Spatial6" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 3, -17.9 )
+
+[node name="Spatial7" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, -19, 9, 2 )
+
+[node name="Spatial8" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 18, 6 )
+
+[node name="Spatial9" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 16, 6 )
+
+[node name="Spatial10" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 20, 6 )
+
+[node name="Spatial11" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 27, 6 )
+
+[node name="Spatial12" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 5, 0, 0, 0, -4.37114e-08, 6, 0, -1, -2.62268e-07, -35, 18, 3 )
+
+[node name="Spatial14" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, -4.37114e-08, 6, 0, -1, -2.62268e-07, -45.5, 18, 9 )
+
+[node name="Spatial15" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( -8.74228e-08, -1, -2.62268e-07, 0, -4.37114e-08, 6, -2, 4.37114e-08, 1.14641e-14, -48.5, 18, 6 )
+
+[node name="Spatial16" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, -4.37114e-08, 4, 0, -1, -1.74846e-07, -45.5, 21, 3 )
+
+[node name="Spatial13" parent="platforms/static" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 9, 0 )
+
+[node name="moving" type="Node" parent="platforms"]
+
+[node name="platform" parent="platforms/moving" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.3004, 9.018, 0.565301 )
+
+[node name="platform2" parent="platforms/moving" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7968, 6.43712, 10.4167 )
+
+[node name="Spatial" parent="platforms/moving/platform2" index="0"]
+transform = Transform( 1, 0.000345267, 0, -0.000345267, 1, 0, 0, 0, 1, 0.203188, 16.5629, 0.583328 )
+
+[node name="Path" parent="platforms/moving/platform2" index="1"]
+curve = SubResource( 7 )
+
+[node name="PathFollow" parent="platforms/moving/platform2/Path" index="0"]
+transform = Transform( 1, 0.000345267, 0, -0.000345267, 1, 0, 0, 0, 1, 0.203188, 16.5629, 0.583328 )
+
+[node name="platform3" parent="platforms/moving" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -44, 5, -22 )
+
+[node name="platform4" parent="platforms/moving" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -19.5, 5, -18 )
+
+[node name="platform5" parent="platforms/moving" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -12, 5, -22 )
+start_unit_offset = 1.0
+animation_speed = 1.2
+
+[node name="platform6" parent="platforms/moving" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6.5, 5, -18 )
+
+[node name="platform7" parent="platforms/moving" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6, 5, -22 )
+
+[node name="platform8" parent="platforms/moving" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 9, 6 )
+start_unit_offset = 1.0
+
+[node name="ground_platform" type="Node" parent="."]
+
+[node name="ground" type="KinematicBody" parent="ground_platform"]
+
+[node name="MeshInstance" type="MeshInstance" parent="ground_platform/ground"]
+mesh = SubResource( 8 )
+skeleton = NodePath("")
+material/0 = SubResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_platform/ground"]
+shape = SubResource( 3 )
+
+[node name="walls" type="Node" parent="."]
+
+[node name="wall1" type="KinematicBody" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.75, 25.25, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="walls/wall1"]
+mesh = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="walls/wall1"]
+shape = SubResource( 6 )
+
+[node name="wall2" type="KinematicBody" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.75, 25.25, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="walls/wall2"]
+mesh = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="walls/wall2"]
+shape = SubResource( 6 )
+
+[node name="wall3" type="KinematicBody" parent="walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 25.25, 49.75 )
+
+[node name="MeshInstance" type="MeshInstance" parent="walls/wall3"]
+mesh = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="walls/wall3"]
+shape = SubResource( 6 )
+
+[node name="wall4" type="KinematicBody" parent="walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 25.25, -49.75 )
+
+[node name="MeshInstance" type="MeshInstance" parent="walls/wall4"]
+mesh = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="walls/wall4"]
+shape = SubResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 10.0234, 1 )
+
+[node name="lighting" type="Node" parent="."]
+
+[node name="SpotLight" type="SpotLight" parent="lighting"]
+transform = Transform( 1, 0, 0, 0, -0.0314979, 0.999504, 0, -0.999504, -0.0314979, 0, 44.1387, 0 )
+shadow_enabled = true
+spot_range = 68.2189
+
+[editable path="platforms/moving/platform2"]
