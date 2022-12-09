@@ -36,5 +36,5 @@ func _physics_process(delta):
 		var look_direction = Vector2(_velocity.z, _velocity.x)
 		_model.rotation.y = look_direction.angle()
 	
-func _process(delta):
+func _process(_delta):
 	_spring_arm.translation = translation

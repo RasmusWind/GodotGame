@@ -24,7 +24,7 @@ func _ready():
 	platform_pos = platform.global_transform.origin
 	pass 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	enemy_pos = global_transform.origin
 	player_pos = player.global_transform.origin
 	if path_node < path.size():
@@ -32,7 +32,7 @@ func _physics_process(delta):
 		if direction.length() < 0.6:
 			path_node += 1
 		else:
-			move_and_slide(direction.normalized() * speed, Vector3.UP)
+			var _move_and_slide = move_and_slide(direction.normalized() * speed, Vector3.UP)
 	
 	#check collision player vs enemy
 	if player_pos != null:
@@ -59,6 +59,7 @@ func _physics_process(delta):
 			player.global_transform.origin = player_start_pos
 		
 func move_to(target_pos):
+	
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_node = 0
 
