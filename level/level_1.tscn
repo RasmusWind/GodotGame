@@ -120,6 +120,12 @@ transform = Transform( 2, 0, 0, 0, -4.37114e-08, 4, 0, -1, -1.74846e-07, -45.5, 
 [node name="Spatial13" parent="platforms/static" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 9, 0 )
 
+[node name="Spatial17" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( -1.01582e-08, 4.25147e-08, 1, 0.523421, 0.852074, -3.09086e-08, -0.852074, 0.523421, -3.09086e-08, 46.0842, 14.6936, 0 )
+
+[node name="Spatial18" parent="platforms/static" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 46, 15, 0 )
+
 [node name="moving" type="Node" parent="platforms"]
 
 [node name="platform" parent="platforms/moving" instance=ExtResource( 3 )]

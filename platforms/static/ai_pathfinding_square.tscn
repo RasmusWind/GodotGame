@@ -36,4 +36,4 @@ mesh = SubResource( 2 )
 shape = SubResource( 4 )
 
 [node name="Enemy" parent="Navigation" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.10099, -7 )
