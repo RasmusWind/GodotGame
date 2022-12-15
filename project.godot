@@ -11,7 +11,12 @@ config_version=4
 [application]
 
 config/name="FPSgame"
+run/main_scene="res://network/Lobby.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Net="*res://network/network.gd"
 
 [gui]
 

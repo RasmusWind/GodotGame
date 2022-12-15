@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://player/player_object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://platforms/static/square.tscn" type="PackedScene" id=2]
 [ext_resource path="res://platforms/moving/horizontal_platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://platforms/moving/vertical_platform.tscn" type="PackedScene" id=4]
@@ -120,7 +119,7 @@ transform = Transform( -8.74228e-08, -1, -2.62268e-07, 0, -4.37114e-08, 6, -2, 4
 transform = Transform( 2, 0, 0, 0, -4.37114e-08, 4, 0, -1, -1.74846e-07, -45.5, 21, 3 )
 
 [node name="Spatial13" parent="platforms/static" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 9, 0 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 9, 0 )
 
 [node name="Spatial17" parent="platforms/static" instance=ExtResource( 2 )]
 transform = Transform( -1.01582e-08, 4.25147e-08, 1, 0.523421, 0.852074, -3.09086e-08, -0.852074, 0.523421, -3.09086e-08, 46.0842, 14.6936, 0 )
@@ -216,14 +215,13 @@ mesh = SubResource( 5 )
 [node name="CollisionShape" type="CollisionShape" parent="walls/wall4"]
 shape = SubResource( 6 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 10.0234, 1 )
-
 [node name="lighting" type="Node" parent="."]
 
 [node name="SpotLight" type="SpotLight" parent="lighting"]
 transform = Transform( 1, 0, 0, 0, -0.0314979, 0.999504, 0, -0.999504, -0.0314979, 0, 44.1387, 0 )
 shadow_enabled = true
 spot_range = 68.2189
+
+[node name="Players" type="Node" parent="."]
 
 [editable path="platforms/moving/platform2"]
